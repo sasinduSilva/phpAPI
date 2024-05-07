@@ -1,0 +1,664 @@
+{
+	"info": {
+		"_postman_id": "d815da1f-9255-49f1-ad89-82a9cd16663b",
+		"name": "GrowBrow_Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9774482"
+	},
+	"item": [
+		{
+			"name": "LocalHost",
+			"item": [
+				{
+					"name": "signup",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"signup\",\r\n    \"email\": \"abc@xyz.com\", \r\n    \"mobile\": \"117123123\", \r\n    \"password\": \"abc123\",\r\n    \"user_type\": \"customer\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"login\",\r\n    \"email\": \"abc@xyz.com\", \r\n    \"password\": \"abc123\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_device",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTYzNjM3OTM5MDYxODk3Mw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"register_device\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\", \r\n    \"device_name\": \"ABC Device\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_device_data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTYzNjM3OTM5MDYxODk3Mw==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"get_device_data\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_device_data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"post_device_data\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\",\r\n    \"device_data\":{\r\n                \"device_name\":\"ABC Device\",\r\n                \"R1\": \"OFF\",\r\n                \"R2\": \"OFF\",\r\n                \"R3\": \"OFF\",\r\n                \"R4\": \"OFF\",\r\n                \"R5\": \"OFF\",\r\n                \"R6\": \"OFF\",\r\n                \"R7\": \"OFF\",\r\n                \"R8\": \"OFF\",\r\n                \"R9\": \"OFF\",\r\n                \"R10\": \"OFF\",\r\n                \"R11\": \"ON\",\r\n                \"Em\": 0,\r\n                \"__v\": 0,\r\n                \"Status\": 5,\r\n                \"WC\": 0,\r\n                \"Wtemp\": 23.5,\r\n                \"Atemp\": 25.6,\r\n                \"Rhumidity\": 35.8,\r\n                \"WaterLevel\":1\r\n   }\r\n\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change_password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "wk-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"change_password\",\r\n    \"current_password\": \"123456\", \r\n    \"new_password\": \"456789\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/Divor.io/Growbro.lk/api.growbro.lk/apiListner.php",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Divor.io",
+								"Growbro.lk",
+								"api.growbro.lk",
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OldServer",
+			"item": [
+				{
+					"name": "Get_Data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://3.1.94.73:8082/api/relays/6052e44860ab3d1d88673fb7",
+							"protocol": "http",
+							"host": [
+								"3",
+								"1",
+								"94",
+								"73"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"relays",
+								"6052e44860ab3d1d88673fb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Water_Change_Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"WC\":\"0\"\r\n}"
+						},
+						"url": {
+							"raw": "http://3.1.94.73:8082/api/relays/6052e44860ab3d1d88673fb7",
+							"protocol": "http",
+							"host": [
+								"3",
+								"1",
+								"94",
+								"73"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"relays",
+								"6052e44860ab3d1d88673fb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Data",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"R1\":\"ON\"\r\n}"
+						},
+						"url": {
+							"raw": "http://3.1.94.73:8082/api/relays/6052e44860ab3d1d88673fb7",
+							"protocol": "http",
+							"host": [
+								"3",
+								"1",
+								"94",
+								"73"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"relays",
+								"6052e44860ab3d1d88673fb7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DeviceID\":\"6052e44860ab3d1d88673fb7\",\r\n    \"Wtemp\":\"1111111\",\r\n    \"Atemp\": \"22222\",\r\n    \"Rhumidity\":\"333333\",\r\n    \"WaterLevel\":\"444444\",\r\n    \"Status\": \"6\"\r\n}"
+						},
+						"url": {
+							"raw": "http://3.1.94.73:8082/api/data",
+							"protocol": "http",
+							"host": [
+								"3",
+								"1",
+								"94",
+								"73"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NewServer",
+			"item": [
+				{
+					"name": "signup",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"signup\",\r\n    \"email\": \"abc@xyz.com\", \r\n    \"mobile\": \"117123123\", \r\n    \"password\": \"abc123\",\r\n    \"user_type\": \"customer\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"login\",\r\n    \"email\": \"abc@xyz.com\", \r\n    \"password\": \"abc123\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register_device",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTYzNjM4NTQ3NTYxMjg4OA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"register_device\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\", \r\n    \"device_name\": \"ABC Device\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_device_data",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTY1Mjg1NDg3NTAwMDAwMA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"get_device_data\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\"\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_device_data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTYzNjM4NTQ3NTYxMjg4OA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"post_device_data\",\r\n    \"device_id\": \"6052e44860ab3d1d88673fb7\",\r\n    \"device_data\":{\r\n                \"device_name\":\"ABC Device\",\r\n                \"R1\": \"ON\",\r\n                \"R2\": \"ON\",\r\n                \"R3\": \"ON\",\r\n                \"R4\": \"OFF\",\r\n                \"R5\": \"OFF\",\r\n                \"R6\": \"OFF\",\r\n                \"R7\": \"OFF\",\r\n                \"R8\": \"OFF\",\r\n                \"R9\": \"OFF\",\r\n                \"R10\": \"OFF\",\r\n                \"R11\": \"ON\",\r\n                \"Em\": 0,\r\n                \"__v\": 0,\r\n                \"GrowState\": 5,\r\n                \"WC\": 0,\r\n                \"Wtemp\": 23.5,\r\n                \"Atemp\": 25.6,\r\n                \"Rhumidity\": 35.8,\r\n                \"WaterLevel\":1\r\n   }\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change_password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "gb-api-token",
+								"value": "dskghdfkhgjdf54546456546",
+								"type": "text"
+							},
+							{
+								"key": "gb-user-token",
+								"value": "MTYzNjM4NTQ3NTYxMjg4OA==",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"operation\": \"change_password\",\r\n    \"current_password\": \"abc123\", \r\n    \"new_password\": \"456789\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://api.growbro.lk/apiListner.php",
+							"protocol": "https",
+							"host": [
+								"api",
+								"growbro",
+								"lk"
+							],
+							"path": [
+								"apiListner.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_user_data",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,95 @@
+<?php
+// date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Colombo');
+$time = time();
+
+$db = mysqli_connect($db_host, $db_username ,$db_password, $db_name);
+mysqli_set_charset($db,"utf8");
+
+/*
+
+ 	// echo $timestamp_for_currentday ."=>". json_encode($user_counts_data["daily"][$timestamp_for_currentday]) ."=>". json_encode($user_counts_data["total"]) ."\n";
+    $userdata_enter_sql = "INSERT INTO $user_stats_daily_table (date, user_counts_daily, user_counts_total) VALUES ('$timestamp_for_currentday','" . json_encode($user_counts_data["daily"][$timestamp_for_currentday]) ."', '" .json_encode($user_counts_data["total"])."')";
+    // echo $userdata_enter_sql ."\n";
+    mysqli_query($db,$userdata_enter_sql); 
+    echo mysqli_error($db);    
+    // exit();
+
+	// echo $timestamp_for_currentday ."=>". json_encode($user_counts_data["daily"][$timestamp_for_currentday]) ."=>". json_encode($user_counts_data["total"]) ."\n";
+    $userdata_enter_sql = "INSERT INTO $user_stats_daily_table (date, user_counts_daily, user_counts_total) VALUES ('$timestamp_for_currentday','" . json_encode($user_counts_data["daily"][$timestamp_for_currentday]) ."', '" .json_encode($user_counts_data["total"])."')";
+    // echo $userdata_enter_sql ."\n";
+    mysqli_query($db,$userdata_enter_sql); 
+    echo mysqli_error($db);    
+    // exit();
+
+	$access_token_query = mysqli_query($db,"SELECT * FROM $ideabiz_tokens_table WHERE id = 1");  
+	if($access_token_query_array = mysqli_fetch_assoc($access_token_query))
+	{
+
+	while($access_token_query_array = mysqli_fetch_assoc($access_token_query))
+	{
+
+	$query_string = "UPDATE $wasi_999_package_subscriptions_table SET lastRentalCorrelator = '$clientCorrelator' WHERE  msisdn = '$msisdn' AND package_id = '$package_id'";
+	mysqli_query($db, $query_string);
+
+*/
+
+function setResponseCode($RespCode, $additional_note = null)
+{
+	global $response_object;
+	global $ResponseCodeDesc;
+	global $msisdn;
+	global $mode;
+	global $display_msisdn;
+	global $package_id;
+	global $service_name;		
+
+	$response_object["ResponseCode"] = $RespCode;
+	$response_object["ResponseDesc"] = str_replace(array("<mobile>","<package_id>","<service>"),array($display_msisdn,$package_id,$service_name), $ResponseCodeDesc[$response_object["ResponseCode"]]);
+
+	if($RespCode == "0021") //"0021" => "Bids ලබා ගැනීම සාර්ථකයි.Bids wallet updated successfully"
+	{
+		$response_object["ResponseCode"] = "0000";
+	}	
+
+	if(isset($additional_note))
+	{
+		$response_object["ResponseDesc"] .= "(".$additional_note.")";
+	}
+}
+
+function get_token($input)
+{
+	return base64_encode((string) rand(1000000,999999) * $input);
+}
+
+function validate_user_token($token)
+{
+	global $db, $gb_users_table;
+	$user_token_query = mysqli_query($db,"SELECT * FROM $gb_users_table WHERE user_token = '$token'");  
+	if($user_token_query_array = mysqli_fetch_assoc($user_token_query))
+	{
+		return $user_token_query_array["id"];
+	}else{
+		return false;
+	}
+}
+
+function sendResponse($response_object)
+{	
+	global $api_log;
+	
+	writetolog("Response << ".json_encode($response_object), $api_log);
+	echo json_encode($response_object);
+	exit;
+}
+
+
+function writetolog($content, $logfile)
+{
+	$logfile = "logs/$logfile";
+	$fp = fopen($logfile, 'a');
+	fwrite($fp, date("g:i A dmy")."|".$content."\n");
+	fclose($fp);
+}
+?>
